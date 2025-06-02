@@ -1,0 +1,547 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #222831;
+    color: #DFD0B8;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background-color: #393E46;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header h1 {
+    color: #948979;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.header p {
+    color: #DFD0B8;
+    font-size: 1rem;
+    text-align: center;
+    opacity: 0.9;
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 120px;
+    padding: 40px 0;
+    min-height: calc(100vh - 200px);
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 50px;
+    background-color: #393E46;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+section h2 {
+    color: #948979;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 600;
+}
+
+section h3 {
+    color: #948979;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* Tab Buttons */
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background-color: #222831;
+    color: #DFD0B8;
+    border: 2px solid #948979;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+.tab-btn:hover {
+    background-color: #948979;
+    color: #222831;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(148, 137, 121, 0.3);
+}
+
+.tab-btn.active {
+    background-color: #948979;
+    color: #222831;
+    box-shadow: 0 4px 12px rgba(148, 137, 121, 0.3);
+}
+
+/* Table Container */
+.table-container {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.table-container.active {
+    display: block;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #222831;
+}
+
+/* Table Styles */
+.rates-table,
+.detailed-fees-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #222831;
+    color: #DFD0B8;
+    font-size: 0.95rem;
+}
+
+.rates-table th,
+.detailed-fees-table th {
+    background-color: #948979;
+    color: #222831;
+    padding: 15px 12px;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid #393E46;
+    font-size: 0.9rem;
+}
+
+.rates-table td,
+.detailed-fees-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #393E46;
+    transition: background-color 0.3s ease;
+}
+
+.rates-table tbody tr:hover,
+.detailed-fees-table tbody tr:hover {
+    background-color: #393E46;
+    cursor: pointer;
+}
+
+.rates-table tbody tr:nth-child(even),
+.detailed-fees-table tbody tr:nth-child(even) {
+    background-color: rgba(57, 62, 70, 0.3);
+}
+
+/* Calculator Form Styles */
+.calculator-form {
+    background-color: #222831;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    color: #948979;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.form-group input,
+.form-group select {
+    background-color: #393E46;
+    color: #DFD0B8;
+    border: 2px solid #948979;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #DFD0B8;
+    box-shadow: 0 0 10px rgba(148, 137, 121, 0.3);
+    transform: translateY(-2px);
+}
+
+.form-group input:hover,
+.form-group select:hover {
+    border-color: #DFD0B8;
+}
+
+.input-group select {
+    flex: 0 0 100px;
+}
+
+.calculate-btn {
+    background: linear-gradient(135deg, #948979, #DFD0B8);
+    color: #222831;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    min-width: 200px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.calculate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(148, 137, 121, 0.4);
+    background: linear-gradient(135deg, #DFD0B8, #948979);
+}
+
+.calculate-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Calculation Result Styles */
+.calculation-result {
+    background-color: #222831;
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid #948979;
+    animation: slideIn 0.5s ease-out;
+}
+
+.calculation-result h3 {
+    color: #948979;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: #393E46;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.result-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.result-item.highlight {
+    background-color: rgba(148, 137, 121, 0.2);
+    border-left: 4px solid #948979;
+}
+
+.result-item.total {
+    background: linear-gradient(135deg, #948979, #DFD0B8);
+    color: #222831;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-left: none;
+}
+
+.result-label {
+    font-weight: 600;
+    color: #948979;
+}
+
+.result-item.total .result-label {
+    color: #222831;
+}
+
+.result-value {
+    font-weight: 700;
+    color: #DFD0B8;
+    font-size: 1.1rem;
+}
+
+.result-item.total .result-value {
+    color: #222831;
+    font-size: 1.3rem;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Filter Controls */
+.filter-controls {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-controls label {
+    color: #948979;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.filter-controls select {
+    background-color: #222831;
+    color: #DFD0B8;
+    border: 2px solid #948979;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 180px;
+}
+
+.filter-controls select:hover,
+.filter-controls select:focus {
+    border-color: #DFD0B8;
+    outline: none;
+    box-shadow: 0 0 8px rgba(148, 137, 121, 0.3);
+}
+
+.filter-controls option {
+    background-color: #222831;
+    color: #DFD0B8;
+}
+
+/* Footer */
+.footer {
+    background-color: #393E46;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 2px solid #948979;
+    margin-top: 50px;
+}
+
+.footer p {
+    color: #DFD0B8;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .header p {
+        font-size: 0.9rem;
+    }
+    
+    .main-content {
+        margin-top: 140px;
+        padding: 20px 0;
+    }
+    
+    section {
+        padding: 20px 15px;
+        margin-bottom: 30px;
+    }
+    
+    section h2 {
+        font-size: 1.5rem;
+    }
+    
+    section h3 {
+        font-size: 1.2rem;
+    }
+    
+    .tab-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .rates-table th,
+    .detailed-fees-table th,
+    .rates-table td,
+    .detailed-fees-table td {
+        padding: 8px 6px;
+        font-size: 0.8rem;
+    }
+    
+    .filter-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-controls select {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .calculator-form {
+        padding: 20px 15px;
+    }
+    
+    .input-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .input-group select {
+        flex: 1;
+    }
+    
+    .calculate-btn {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    
+    .calculation-result {
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .rates-table th,
+    .detailed-fees-table th,
+    .rates-table td,
+    .detailed-fees-table td {
+        padding: 6px 4px;
+        font-size: 0.75rem;
+    }
+    
+    section {
+        padding: 15px 10px;
+    }
+}
+
+/* Scrollbar Styling */
+.table-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: #222831;
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #948979;
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #DFD0B8;
+}
+
+/* Loading Animation */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: #948979;
+    font-size: 1.1rem;
+}
+
+/* Highlight Effects */
+.highlight-row {
+    background-color: rgba(148, 137, 121, 0.2) !important;
+    animation: highlightPulse 2s ease-in-out;
+}
+
+@keyframes highlightPulse {
+    0%, 100% {
+        background-color: rgba(148, 137, 121, 0.2);
+    }
+    50% {
+        background-color: rgba(148, 137, 121, 0.4);
+    }
+} 

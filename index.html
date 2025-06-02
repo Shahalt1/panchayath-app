@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panchayat House Permit Fee Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Panchayat House Permit Fee Calculator</h1>
+            <p>Kerala Local Self Government Department</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Section 1: Panchayat Type Selector -->
+            <section class="panchayat-selector">
+                <h2>Select Panchayat Type</h2>
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-type="grama">Grama Panchayat</button>
+                    <button class="tab-btn" data-type="municipality">Municipality</button>
+                    <button class="tab-btn" data-type="corporation">Corporation</button>
+                </div>
+            </section>
+
+            <!-- Section 2: Area-based Rates Table -->
+            <section class="rates-section">
+                <h2>Area-based Fee Structure</h2>
+                
+                <!-- Grama Panchayat Table -->
+                <div class="table-container active" id="grama-table">
+                    <h3>Grama Panchayat Rates</h3>
+                    <div class="table-wrapper">
+                        <table class="rates-table">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">Category</th>
+                                    <th colspan="2">81-150 m² (871.88 - 1614.59 Sq feet)</th>
+                                    <th colspan="2">151-300 m² (1614.59 - 3229.17 Sq feet)</th>
+                                    <th colspan="2">300 m² onwards (3229.17 + Sq feet)</th>
+                                </tr>
+                                <tr>
+                                    <th>Rate (₹/m²)</th>
+                                    <th>Percentage</th>
+                                    <th>Rate (₹/m²)</th>
+                                    <th>Percentage</th>
+                                    <th>Rate (₹/m²)</th>
+                                    <th>Percentage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>താമസം (Residence)</td>
+                                    <td>50</td>
+                                    <td>25</td>
+                                    <td>50%</td>
+                                    <td>100</td>
+                                    <td>50</td>
+                                    <td>50%</td>
+                                    <td>150</td>
+                                    <td>100</td>
+                                    <td>33.33%</td>
+                                </tr>
+                                <tr>
+                                    <td>വ്യാപാരം (Business)</td>
+                                    <td>50</td>
+                                    <td>30</td>
+                                    <td>40%</td>
+                                    <td>100</td>
+                                    <td>50</td>
+                                    <td>50%</td>
+                                    <td>150</td>
+                                    <td>100</td>
+                                    <td>33.33%</td>
+                                </tr>
+                                <tr>
+                                    <td>വാണിജ്യം (Commercial)</td>
+                                    <td>70</td>
+                                    <td>40</td>
+                                    <td>42.8%</td>
+                                    <td>150</td>
+                                    <td>70</td>
+                                    <td>53.33%</td>
+                                    <td>200</td>
+                                    <td>120</td>
+                                    <td>40%</td>
+                                </tr>
+                                <tr>
+                                    <td>കുടുംബ (Family)</td>
+                                    <td>50</td>
+                                    <td>30</td>
+                                    <td>40%</td>
+                                    <td>100</td>
+                                    <td>60</td>
+                                    <td>40%</td>
+                                    <td>150</td>
+                                    <td>90</td>
+                                    <td>40%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Municipality Table -->
+                <div class="table-container" id="municipality-table">
+                    <h3>Municipality Rates</h3>
+                    <div class="table-wrapper">
+                        <table class="rates-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Rate (₹/m²)</th>
+                                    <th>Rate (₹/m²)</th>
+                                    <th>Percentage</th>
+                                    <th>Rate (₹/m²)</th>
+                                    <th>Rate (₹/m²)</th>
+                                    <th>Percentage</th>
+                                    <th>Rate (₹/m²)</th>
+                                    <th>Rate (₹/m²)</th>
+                                    <th>Percentage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>താമസം (Residence)</td>
+                                    <td>70</td>
+                                    <td>35</td>
+                                    <td>50%</td>
+                                    <td>120</td>
+                                    <td>60</td>
+                                    <td>50%</td>
+                                    <td>200</td>
+                                    <td>150</td>
+                                    <td>25%</td>
+                                </tr>
+                                <tr>
+                                    <td>വ്യാപാരം (Business)</td>
+                                    <td>70</td>
+                                    <td>40</td>
+                                    <td>42.85%</td>
+                                    <td>120</td>
+                                    <td>60</td>
+                                    <td>50%</td>
+                                    <td>200</td>
+                                    <td>150</td>
+                                    <td>25%</td>
+                                </tr>
+                                <tr>
+                                    <td>വാണിജ്യം (Commercial)</td>
+                                    <td>90</td>
+                                    <td>50</td>
+                                    <td>44.44%</td>
+                                    <td>150</td>
+                                    <td>80</td>
+                                    <td>46.66%</td>
+                                    <td>250</td>
+                                    <td>150</td>
+                                    <td>40%</td>
+                                </tr>
+                                <tr>
+                                    <td>കുടുംബ (Family)</td>
+                                    <td>70</td>
+                                    <td>40</td>
+                                    <td>42.85%</td>
+                                    <td>120</td>
+                                    <td>70</td>
+                                    <td>41.66%</td>
+                                    <td>200</td>
+                                    <td>100</td>
+                                    <td>50%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Corporation Table -->
+                <div class="table-container" id="corporation-table">
+                    <h3>Corporation Rates</h3>
+                    <div class="table-wrapper">
+                        <table class="rates-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Rate (₹/m²)</th>
+                                    <th>Rate (₹/m²)</th>
+                                    <th>Percentage</th>
+                                    <th>Rate (₹/m²)</th>
+                                    <th>Rate (₹/m²)</th>
+                                    <th>Percentage</th>
+                                    <th>Rate (₹/m²)</th>
+                                    <th>Rate (₹/m²)</th>
+                                    <th>Percentage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>താമസം (Residence)</td>
+                                    <td>100</td>
+                                    <td>40</td>
+                                    <td>60%</td>
+                                    <td>150</td>
+                                    <td>70</td>
+                                    <td>53.33%</td>
+                                    <td>200</td>
+                                    <td>150</td>
+                                    <td>25%</td>
+                                </tr>
+                                <tr>
+                                    <td>വ്യാപാരം (Business)</td>
+                                    <td>120</td>
+                                    <td>50</td>
+                                    <td>58.33%</td>
+                                    <td>150</td>
+                                    <td>70</td>
+                                    <td>53.33%</td>
+                                    <td>200</td>
+                                    <td>150</td>
+                                    <td>25%</td>
+                                </tr>
+                                <tr>
+                                    <td>വാണിജ്യം (Commercial)</td>
+                                    <td>100</td>
+                                    <td>60</td>
+                                    <td>40%</td>
+                                    <td>170</td>
+                                    <td>100</td>
+                                    <td>41.17%</td>
+                                    <td>300</td>
+                                    <td>150</td>
+                                    <td>50%</td>
+                                </tr>
+                                <tr>
+                                    <td>കുടുംബ (Family)</td>
+                                    <td>100</td>
+                                    <td>50</td>
+                                    <td>50%</td>
+                                    <td>150</td>
+                                    <td>80</td>
+                                    <td>46.66%</td>
+                                    <td>200</td>
+                                    <td>120</td>
+                                    <td>40%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Fee Calculator Form -->
+            <section class="calculator-section">
+                <h2>Fee Calculator</h2>
+                
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="area-input">Enter Area:</label>
+                        <div class="input-group">
+                            <input type="number" id="area-input" placeholder="Enter area" min="1" step="0.01">
+                            <select id="area-unit">
+                                <option value="sqft">sq.ft</option>
+                                <option value="sqm">sq.m</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="panchayat-type">Panchayat Type:</label>
+                        <select id="panchayat-type">
+                            <option value="grama">Grama Panchayat</option>
+                            <option value="municipality">Municipality</option>
+                            <option value="corporation">Corporation</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="building-category">Building Category:</label>
+                        <select id="building-category">
+                            <option value="residence">താമസം (Residence)</option>
+                            <option value="business">വ്യാപാരം (Business)</option>
+                            <option value="commercial">വാണിജ്യം (Commercial)</option>
+                            <option value="family">കുടുംബ (Family)</option>
+                        </select>
+                    </div>
+
+                    <button type="button" id="calculate-btn" class="calculate-btn">Calculate Fees</button>
+                </div>
+
+                <div class="calculation-result" id="calculation-result" style="display: none;">
+                    <h3>Fee Calculation Result</h3>
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <span class="result-label">Area:</span>
+                            <span class="result-value" id="result-area"></span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Panchayat Type:</span>
+                            <span class="result-value" id="result-panchayat"></span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Category:</span>
+                            <span class="result-value" id="result-category"></span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Rate per sq.m:</span>
+                            <span class="result-value" id="result-rate"></span>
+                        </div>
+                        <div class="result-item highlight">
+                            <span class="result-label">Building Permit Fee:</span>
+                            <span class="result-value" id="result-permit-fee"></span>
+                        </div>
+                        <div class="result-item highlight">
+                            <span class="result-label">Development Fee:</span>
+                            <span class="result-value" id="result-development-fee"></span>
+                        </div>
+                        <div class="result-item total">
+                            <span class="result-label">Total Fee:</span>
+                            <span class="result-value" id="result-total-fee"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Area-wise Detailed Permit Fees -->
+            <section class="detailed-fees-section">
+                <h2>Area-wise Detailed Permit Fees</h2>
+                
+                <div class="filter-controls">
+                    <label for="area-filter">Filter by Area Range:</label>
+                    <select id="area-filter">
+                        <option value="all">All Areas</option>
+                        <option value="1000-1500">1000-1500 sq.ft</option>
+                        <option value="1500-2000">1500-2000 sq.ft</option>
+                        <option value="2000-2500">2500-2500 sq.ft</option>
+                        <option value="2500-3000">2500-3000 sq.ft</option>
+                        <option value="3000+">3000+ sq.ft</option>
+                    </select>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="detailed-fees-table" id="detailed-fees-table">
+                        <thead>
+                            <tr>
+                                <th>Area (sq.ft)</th>
+                                <th>Area (m²)</th>
+                                <th>Grama Panchayat (₹)</th>
+                                <th>Municipality (₹)</th>
+                                <th>Corporation (₹)</th>
+                                <th>Building Permit Fee (₹)</th>
+                                <th>Development Fee (₹)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="detailed-fees-tbody">
+                            <!-- Data will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; LSGD Kerala | Data Source: Panchayat Dept.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
