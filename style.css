@@ -13,6 +13,15 @@ body {
     min-height: 100vh;
 }
 
+a {
+    color: #DFD0B8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #948979;
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -110,63 +119,6 @@ section h3 {
     background-color: #948979;
     color: #222831;
     box-shadow: 0 4px 12px rgba(148, 137, 121, 0.3);
-}
-
-/* Table Container */
-.table-container {
-    display: none;
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-.table-container.active {
-    display: block;
-}
-
-.table-wrapper {
-    overflow-x: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    background-color: #222831;
-}
-
-/* Table Styles */
-.rates-table,
-.detailed-fees-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #222831;
-    color: #DFD0B8;
-    font-size: 0.95rem;
-}
-
-.rates-table th,
-.detailed-fees-table th {
-    background-color: #948979;
-    color: #222831;
-    padding: 15px 12px;
-    text-align: center;
-    font-weight: 600;
-    border: 1px solid #393E46;
-    font-size: 0.9rem;
-}
-
-.rates-table td,
-.detailed-fees-table td {
-    padding: 12px;
-    text-align: center;
-    border: 1px solid #393E46;
-    transition: background-color 0.3s ease;
-}
-
-.rates-table tbody tr:hover,
-.detailed-fees-table tbody tr:hover {
-    background-color: #393E46;
-    cursor: pointer;
-}
-
-.rates-table tbody tr:nth-child(even),
-.detailed-fees-table tbody tr:nth-child(even) {
-    background-color: rgba(57, 62, 70, 0.3);
 }
 
 /* Calculator Form Styles */
@@ -333,46 +285,6 @@ section h3 {
     }
 }
 
-/* Filter Controls */
-.filter-controls {
-    margin-bottom: 25px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.filter-controls label {
-    color: #948979;
-    font-weight: 500;
-    font-size: 1rem;
-}
-
-.filter-controls select {
-    background-color: #222831;
-    color: #DFD0B8;
-    border: 2px solid #948979;
-    padding: 10px 15px;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    min-width: 180px;
-}
-
-.filter-controls select:hover,
-.filter-controls select:focus {
-    border-color: #DFD0B8;
-    outline: none;
-    box-shadow: 0 0 8px rgba(148, 137, 121, 0.3);
-}
-
-.filter-controls option {
-    background-color: #222831;
-    color: #DFD0B8;
-}
-
 /* Footer */
 .footer {
     background-color: #393E46;
@@ -442,24 +354,6 @@ section h3 {
         max-width: 250px;
     }
     
-    .rates-table th,
-    .detailed-fees-table th,
-    .rates-table td,
-    .detailed-fees-table td {
-        padding: 8px 6px;
-        font-size: 0.8rem;
-    }
-    
-    .filter-controls {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .filter-controls select {
-        width: 100%;
-        max-width: 250px;
-    }
-    
     .calculator-form {
         padding: 20px 15px;
     }
@@ -487,14 +381,6 @@ section h3 {
 @media (max-width: 480px) {
     .header h1 {
         font-size: 1.5rem;
-    }
-    
-    .rates-table th,
-    .detailed-fees-table th,
-    .rates-table td,
-    .detailed-fees-table td {
-        padding: 6px 4px;
-        font-size: 0.75rem;
     }
     
     section {
